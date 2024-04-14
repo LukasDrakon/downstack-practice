@@ -973,25 +973,25 @@ function generate_final_map(){
                 if (j < height[i]){
                     game.board[j][i] = 'G'}}}
 
-        if (is_right){
-            var garbage_pos = ['GGNG','GGNG','GNNN','GNNG','GGNG','NNNG','NNGG']
-            for (var row_idx=0; row_idx<7;row_idx++){
-                for (var col_idx=0; col_idx<4;col_idx++){
-                    game.board[row_idx][tsd_col-2+col_idx]= garbage_pos[row_idx][col_idx]
-                }
-            }
-            var kick_col = tsd_col-3
-
-
-        }
-        else{
-            var garbage_pos = ['GNGG','GNGG','NNNG','GNNG','GNGG','GNNN','GGNN']
-            for (var row_idx=0; row_idx<7;row_idx++){
+              if (is_right){
+            var garbage_pos = ['GNGG','GGNG','GNNG','GGNG','NNNG','NNGG']
+            for (var row_idx=0; row_idx<6;row_idx++){
                 for (var col_idx=0; col_idx<4;col_idx++){
                     game.board[row_idx][tsd_col-1+col_idx]= garbage_pos[row_idx][col_idx]
                 }
             }
-            var kick_col = tsd_col+3
+            var kick_col = tsd_col-2
+
+
+        }
+        else{
+            var garbage_pos = ['GGNG','GNGG','GNNG','GNGG','GNNN','GGNN']
+            for (var row_idx=0; row_idx<6;row_idx++){
+                for (var col_idx=0; col_idx<4;col_idx++){
+                    game.board[row_idx][tsd_col-2+col_idx]= garbage_pos[row_idx][col_idx]
+                }
+            }
+            var kick_col = tsd_col+2
 
         }
         if (kick_col>=0 && kick_col<10){
