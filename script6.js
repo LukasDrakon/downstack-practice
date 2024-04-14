@@ -4,7 +4,7 @@ console.log(game.tetramino, JSON.stringify(game.to_shape()))
 const Keybind = {'keydown':{}, 'keyup':{}}
 var Config = {'das':100, 'arr':0, 'delay':0, 'pressing_left':false, 'pressing_right': false, 'pressing_down': false, 'pressing':{},
 'skim_ind':false, 'mdhole_ind':false, 'unqiue_ind':true, 'smooth_ind':true, 'donate_ind':false, 'zero9_ind': false, 'auto_next_ind':true,
-'mode':'prepare', 'no_of_unreserved_piece':7, 'no_of_piece':7,
+'mode':'prepare', 'no_of_unreserved_piece':14, 'no_of_piece':7,
 'no_of_trial':0, 'no_of_success':0}
 var Customized_key = ['ArrowLeft','ArrowRight','ArrowDown','Space','KeyZ','KeyX','KeyA','ShiftLeft','KeyR','KeyP']
 var board = document.getElementById('board')
@@ -101,8 +101,8 @@ function save_setting(){
 function save_gamemode(){
     console.log('save_gamemode')
     Config.no_of_piece = parseInt(document.getElementById('input13').value)
-    if (! (Config.no_of_piece>=2 && Config.no_of_piece<=7)){
-        alert('no of piece should be between 2 to 7')
+    if (! (Config.no_of_piece>=2 && Config.no_of_piece<=14)){
+        alert('no of piece should be between 2 to 14')
         Config.no_of_piece = 7
     }
     Config.skim_ind = document.getElementById('input14').checked
