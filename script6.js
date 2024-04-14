@@ -980,7 +980,7 @@ function generate_final_map(){
                     game.board[row_idx][tsd_col-1+col_idx]= garbage_pos[row_idx][col_idx]
                 }
             }
-            var kick_col = tsd_col-3
+            var kick_col = tsd_col-=2
 
 
         }
@@ -991,7 +991,7 @@ function generate_final_map(){
                     game.board[row_idx][tsd_col-2+col_idx]= garbage_pos[row_idx][col_idx]
                 }
             }
-            var kick_col = tsd_col+3
+            var kick_col = tsd_col+2
 
         }
         if (kick_col>=0 && kick_col<10){
