@@ -1019,7 +1019,7 @@ function generate_final_map(){
         //create random landsacpe
         var height = []
         for (var i=0; i<10; i++)
-            height.push(Math.floor(Math.random()*3)+7)
+            height.push(Math.floor(Math.random()*3)+5)
 
         //create cspin hole
         var is_right = Math.floor(Math.random()*2) == 0 //overhang is left?
@@ -1060,7 +1060,7 @@ function generate_final_map(){
                     game.board[row_idx][tsd_col-1+col_idx]= garbage_pos[row_idx][col_idx]
                 }
             }
-            var kick_col = tsd_col-2
+            var kick_col = tsd_col-3
 
 
         }
@@ -1071,7 +1071,7 @@ function generate_final_map(){
                     game.board[row_idx][tsd_col-2+col_idx]= garbage_pos[row_idx][col_idx]
                 }
             }
-            var kick_col = tsd_col+2
+            var kick_col = tsd_col+3
 
         }
         if (kick_col>=0 && kick_col<10){
@@ -1392,7 +1392,7 @@ function detect_win(){
     if (game.line_clear == 4) Record.done_quad++
 
     if (game.total_piece == Config.no_of_piece){
-        if ((Config.mode == 'cspin' && Record.done_tsd && Record.done_tst) ||
+        if ((Config.mode == 'cspin' && d.done_tst >=2) ||
             (Config.mode == 'dt' && Record.done_tsd && Record.done_tst) ||
             (Config.mode == 'cspinquad' && Record.done_tsd && Record.done_tst && Record.done_quad) ||
             (Config.mode == 'fractal' && Record.done_tsd >=2) ||
