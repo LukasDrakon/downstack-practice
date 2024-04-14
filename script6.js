@@ -1057,7 +1057,7 @@ function generate_final_map(){
             var garbage_pos = ['GGNG','GNNG','GGNG','GGNG','GNNG','GGNG','NNNG','NNGG']
             for (var row_idx=0; row_idx<8;row_idx++){
                 for (var col_idx=0; col_idx<4;col_idx++){
-                    game.board[row_idx][tsd_col-1+col_idx]= garbage_pos[row_idx][col_idx]
+                    game.board[row_idx][tsd_col-2+col_idx]= garbage_pos[row_idx][col_idx]
                 }
             }
             var kick_col = tsd_col-3
@@ -1068,7 +1068,7 @@ function generate_final_map(){
             var garbage_pos = ['GNGG','GNNG','GNGG','GNGG','GNNG','GNGG','GNNN','GGNN']
             for (var row_idx=0; row_idx<8;row_idx++){
                 for (var col_idx=0; col_idx<4;col_idx++){
-                    game.board[row_idx][tsd_col-2+col_idx]= garbage_pos[row_idx][col_idx]
+                    game.board[row_idx][tsd_col-1+col_idx]= garbage_pos[row_idx][col_idx]
                 }
             }
             var kick_col = tsd_col+3
