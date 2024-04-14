@@ -1349,8 +1349,7 @@ function play_a_dt_map(){
 
 function play_a_cspin_map(){
     play_a_map('cspin')
-    document.getElementById('winning_requirement1').innerHTML = 'Do a Tspin Double'
-    document.getElementById('winning_requirement2').innerHTML = 'Do a Tspin Triple'  
+    document.getElementById('winning_requirement1').innerHTML = 'Do 2 Tspin Triple'
 }
 function play_a_cspinquad_map(){
     play_a_map('cspinquad')
@@ -1392,7 +1391,7 @@ function detect_win(){
     if (game.line_clear == 4) Record.done_quad++
 
     if (game.total_piece == Config.no_of_piece){
-        if ((Config.mode == 'cspin' && d.done_tst >=2) ||
+        if ((Config.mode == 'cspin' && Record.done_tst >=2) ||
             (Config.mode == 'dt' && Record.done_tsd && Record.done_tst) ||
             (Config.mode == 'cspinquad' && Record.done_tsd && Record.done_tst && Record.done_quad) ||
             (Config.mode == 'fractal' && Record.done_tsd >=2) ||
