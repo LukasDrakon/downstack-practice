@@ -942,26 +942,30 @@ function generate_final_map(){
             height.push(Math.floor(Math.random()*3)+5)
 
         //create dt hole
-        var is_right = Math.floor(Math.random()*2) == 0 //overhang is left?
+       var is_right = Math.floor(Math.random()*2) == 0 //overhang is left?
         if (is_right){
-            var tsd_col = Math.floor(Math.random()*6)+2 //2 to 7
+            var tsd_col = Math.floor(Math.random()*7)+1 //1 to 7
             if (Math.floor(Math.random()*2) == 0){
                 for (var i=0; i<10; i++){
                     height[i]+=1
                 }
                 height[tsd_col-1]-=1
-                height[tsd_col-2]-=1
-            }      
+                height[tsd_col]-=1
+            }
+            height[tsd_col-1]-=1
+            height[tsd_col]-=1 
         }
         else{
-            var tsd_col = Math.floor(Math.random()*6)+2
+            var tsd_col = Math.floor(Math.random()*7)+2 //2 to 8
             if (Math.floor(Math.random()*2) == 0){
                 for (var i=0; i<10; i++){
                     height[i]+=1
                 }
                 height[tsd_col+1]-=1
-                height[tsd_col+2]-=1
+                height[tsd_col]-=1
             }     
+            height[tsd_col+1]-=1
+            height[tsd_col]-=1
         }
  
         for (var j=0; j<20; j++){
