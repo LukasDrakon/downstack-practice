@@ -935,6 +935,7 @@ function generate_final_map(){
         Record.added_line=[]
 
     }
+
     else if (Config.mode=='dt'){
         //create random landsacpe
         var height = []
@@ -942,30 +943,26 @@ function generate_final_map(){
             height.push(Math.floor(Math.random()*3)+5)
 
         //create dt hole
-       var is_right = Math.floor(Math.random()*2) == 0 //overhang is left?
+        var is_right = Math.floor(Math.random()*2) == 0 //overhang is left?
         if (is_right){
-            var tsd_col = Math.floor(Math.random()*7)+1 //1 to 7
+            var tsd_col = Math.floor(Math.random()*6)+2 //2 to 7
             if (Math.floor(Math.random()*2) == 0){
                 for (var i=0; i<10; i++){
                     height[i]+=1
                 }
                 height[tsd_col-1]-=1
-                height[tsd_col]-=1
-            }
-            height[tsd_col-1]-=1
-            height[tsd_col]-=1 
+                height[tsd_col-2]-=1
+            }      
         }
         else{
-            var tsd_col = Math.floor(Math.random()*7)+2 //2 to 8
+            var tsd_col = Math.floor(Math.random()*6)+2
             if (Math.floor(Math.random()*2) == 0){
                 for (var i=0; i<10; i++){
                     height[i]+=1
                 }
                 height[tsd_col+1]-=1
-                height[tsd_col]-=1
+                height[tsd_col+2]-=1
             }     
-            height[tsd_col+1]-=1
-            height[tsd_col]-=1
         }
  
         for (var j=0; j<20; j++){
@@ -973,22 +970,22 @@ function generate_final_map(){
                 if (j < height[i]){
                     game.board[j][i] = 'G'}}}
 
-              if (is_right){
-            var garbage_pos = ['GNGG','GGNG','GNNG','GGNG','NNNG','NNGG']
-            for (var row_idx=0; row_idx<6;row_idx++){
+        if (is_right){
+            var garbage_pos = ['GGNG','GNGG','NNNG','GNNG','GGNG','NNNG','NNGG']
+            for (var row_idx=0; row_idx<7;row_idx++){
                 for (var col_idx=0; col_idx<4;col_idx++){
-                    game.board[row_idx][tsd_col-1+col_idx]= garbage_pos[row_idx][col_idx]
+                    game.board[row_idx][tsd_col-2+col_idx]= garbage_pos[row_idx][col_idx]
                 }
             }
-            var kick_col = tsd_col-=3
+            var kick_col = tsd_col-3
 
 
         }
         else{
-            var garbage_pos = ['GGNG','GNGG','GNNG','GNGG','GNNN','GGNN']
-            for (var row_idx=0; row_idx<6;row_idx++){
+            var garbage_pos = ['GNGG','GGNG','GNNN','GNNG','GNGG','GNNN','GGNN']
+            for (var row_idx=0; row_idx<7;row_idx++){
                 for (var col_idx=0; col_idx<4;col_idx++){
-                    game.board[row_idx][tsd_col-2+col_idx]= garbage_pos[row_idx][col_idx]
+                    game.board[row_idx][tsd_col-1+col_idx]= garbage_pos[row_idx][col_idx]
                 }
             }
             var kick_col = tsd_col+3
