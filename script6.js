@@ -1350,6 +1350,7 @@ function play_a_dt_map(){
 function play_a_cspin_map(){
     play_a_map('cspin')
     document.getElementById('winning_requirement1').innerHTML = 'Do 2 Tspin Triple'
+    document.getElementById('winning_requirement2').innerHTML = ''
 }
 function play_a_cspinquad_map(){
     play_a_map('cspinquad')
