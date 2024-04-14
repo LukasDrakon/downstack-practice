@@ -1019,7 +1019,7 @@ function generate_final_map(){
         //create random landsacpe
         var height = []
         for (var i=0; i<10; i++)
-            height.push(Math.floor(Math.random()*3)+5)
+            height.push(Math.floor(Math.random()*3)+6)
 
         //create cspin hole
         var is_right = Math.floor(Math.random()*2) == 0 //overhang is left?
