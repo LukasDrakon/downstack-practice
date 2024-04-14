@@ -939,7 +939,7 @@ function generate_final_map(){
         //create random landsacpe
         var height = []
         for (var i=0; i<10; i++)
-            height.push(Math.floor(Math.random()*3)+5)
+            height.push(Math.floor(Math.random()*3)+12)
 
         //create dt hole
        var is_right = Math.floor(Math.random()*2) == 0 //overhang is left?
@@ -980,7 +980,7 @@ function generate_final_map(){
                     game.board[row_idx][tsd_col-1+col_idx]= garbage_pos[row_idx][col_idx]
                 }
             }
-            var kick_col = tsd_col-2
+            var kick_col = tsd_col-3
 
 
         }
@@ -991,7 +991,7 @@ function generate_final_map(){
                     game.board[row_idx][tsd_col-2+col_idx]= garbage_pos[row_idx][col_idx]
                 }
             }
-            var kick_col = tsd_col+2
+            var kick_col = tsd_col+3
 
         }
         if (kick_col>=0 && kick_col<10){
