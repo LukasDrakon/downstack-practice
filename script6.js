@@ -1024,7 +1024,7 @@ function generate_final_map(){
         //create cspin hole
         var is_right = Math.floor(Math.random()*2) == 0 //overhang is left?
         if (is_right){
-            var tsd_col = Math.floor(Math.random()*7)+1 //1 to 7
+            var tsd_col = Math.floor(Math.random()*6)+2 //1 to 7
             if (Math.floor(Math.random()*2) == 0){
                 for (var i=0; i<10; i++){
                     height[i]+=1
@@ -1036,7 +1036,7 @@ function generate_final_map(){
             height[tsd_col]-=1 
         }
         else{
-            var tsd_col = Math.floor(Math.random()*7)+2 //2 to 8
+            var tsd_col = Math.floor(Math.random()*6)+2 //2 to 8
             if (Math.floor(Math.random()*2) == 0){
                 for (var i=0; i<10; i++){
                     height[i]+=1
@@ -1076,13 +1076,13 @@ function generate_final_map(){
 
         }
         if (kick_col>=0 && kick_col<10){
-            if (Math.floor(Math.random()*2) == 0 && game.board[7][kick_col] == 'N'){
-                game.board[5][kick_col] = 'N'
+            if (Math.floor(Math.random()*2) == 0 && game.board[8][kick_col] == 'N'){
                 game.board[6][kick_col] = 'N'
+                game.board[7][kick_col] = 'N'
             }
             else{
-                game.board[5][kick_col] = 'G'
                 game.board[6][kick_col] = 'G'
+                game.board[7][kick_col] = 'G'
             }
         }
 
