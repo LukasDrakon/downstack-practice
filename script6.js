@@ -762,7 +762,7 @@ function is_unique(bag){
 function is_even_distributed(bag){
     var last_piece = null
     var counter = {I:0, O:0, T:0, J:0, L:0, Z:0, S:0}
-    var limit = {I:5, O:5, T:5, J:5, L:5, Z:5, S:5}
+    var limit = {I:4, O:4, T:4, J:4, L:4, Z:4, S:4}
     if (Config.unqiue_ind){
         limit = {I:1, O:1, T:1, J:1, L:1, Z:1, S:1}
     }
@@ -776,7 +776,6 @@ function is_even_distributed(bag){
         counter[piece] += 1
         if (counter[piece] > limit[piece]){
             return false}
-        last_piece = piece
     }
     if (counter.I + counter.J + counter.L >6){	
         return false	
