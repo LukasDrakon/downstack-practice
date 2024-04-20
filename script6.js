@@ -767,7 +767,7 @@ function is_even_distributed(bag){
         limit = {I:1, O:1, T:1, J:1, L:1, Z:1, S:1}
     }
     if (Config.mode == 'dt' || Config.mode == 'cspin' || Config.mode == 'fractal' || Config.mode == 'stsd'){
-        limit.T -= 2}
+        limit.T -= 1}
     else if (Config.mode == 'cspinquad'){
         limit.T -= 2
         limit.I -= 1}
