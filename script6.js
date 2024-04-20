@@ -1054,7 +1054,7 @@ function generate_final_map(){
                     game.board[j][i] = 'G'}}}
 
         if (is_right){
-            var garbage_pos = ['GGNG','GNNG','GGNG','GGNG','GNNG','GGNG','NNNG','NNGG']
+            var garbage_pos = ['GNGG','GNNG','GNGG','GNGG','GNNG','GNGG','GNNN','GGNN']
             for (var row_idx=0; row_idx<8;row_idx++){
                 for (var col_idx=0; col_idx<4;col_idx++){
                     game.board[row_idx][tsd_col-2+col_idx]= garbage_pos[row_idx][col_idx]
@@ -1065,7 +1065,7 @@ function generate_final_map(){
 
         }
         else{
-            var garbage_pos = ['GNGG','GNNG','GNGG','GNGG','GNNG','GNGG','GNNN','GGNN']
+            var garbage_pos = ['GGNG','GNNG','GGNG','GGNG','GNNG','GGNG','NNNG','NNGG']
             for (var row_idx=0; row_idx<8;row_idx++){
                 for (var col_idx=0; col_idx<4;col_idx++){
                     game.board[row_idx][tsd_col-1+col_idx]= garbage_pos[row_idx][col_idx]
