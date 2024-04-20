@@ -820,7 +820,7 @@ function try_all_pieces(){
 function try_a_move(){
     //step 1 add line
     if (Config.skim_ind){
-        add_random_line()}
+        add_random_line_less_skim()}
     //step 2 try to add piece
     if (try_all_pieces()){
         game.lock()
